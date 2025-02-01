@@ -18,6 +18,12 @@ defmodule AiCodeReviewWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    live "/reviews", CodeReviewLive.Index, :index
+    live "/reviews/new", CodeReviewLive.Index, :new
+    live "/reviews/:id/edit", CodeReviewLive.Index, :edit
+
+    live "/reviews/:id", CodeReviewLive.Show, :show
+    live "/reviews/:id/show/edit", CodeReviewLive.Show, :edit
   end
 
   # Other scopes may use custom stacks.
