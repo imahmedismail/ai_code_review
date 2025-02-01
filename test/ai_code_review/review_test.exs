@@ -36,7 +36,9 @@ defmodule AiCodeReview.ReviewTest do
       code_review = code_review_fixture()
       update_attrs = %{response: "some updated response", content: "some updated content"}
 
-      assert {:ok, %CodeReview{} = code_review} = Review.update_code_review(code_review, update_attrs)
+      assert {:ok, %CodeReview{} = code_review} =
+               Review.update_code_review(code_review, update_attrs)
+
       assert code_review.response == "some updated response"
       assert code_review.content == "some updated content"
     end
